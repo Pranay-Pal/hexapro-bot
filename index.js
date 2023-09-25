@@ -7,11 +7,16 @@ module.exports = (app) => {
   app.log.info("Yay, the app was loaded!");
 
   app.on("issues.opened", async (context) => {
+    console.log(context);
     const issueComment = context.issue({
       body: "Thanks for opening this issue!",
     });
     return context.octokit.issues.createComment(issueComment);
   });
+  app.on("issues.closed", async (context)=>{
+    console.log(context);
+  })
+  app.on("pull_request")
 
   // For more information on building apps:
   // https://probot.github.io/docs/
