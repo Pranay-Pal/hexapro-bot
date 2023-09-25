@@ -15,8 +15,8 @@ module.exports = (app) => {
   });
   app.on("issues.closed", async (context)=>{
     console.log(context);
-  })
-  app.on("pull_request")
+  });
+  app.on("pull_request",async (context)=>{console.log(context);});
 
   // For more information on building apps:
   // https://probot.github.io/docs/
