@@ -26,6 +26,7 @@ module.exports = (app) => {
     console.log("-------------------------------------------------------------------");
   });
   app.on("pull_request",async (context)=>{console.log(context.payload);});
+  app.on("push", async (context)=>{console.log(context.payload);});
 
   // For more information on building apps:
   // https://probot.github.io/docs/
